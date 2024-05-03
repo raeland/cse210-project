@@ -4,24 +4,45 @@ class Program
 {
     static void Main(string[] args)
     {
+        DisplayWelcomeMessage();
+        
+        string userName = PromptUserName();
+        int userNumber = PromptUserNumber();
+
+        int squaredNumber = SquaredNumber(userNumber);
+
+        DisplayResult(userName, squaredNumber);
+    }
+
+    static void DisplayWelcomeMessage()
+    {
         Console.WriteLine("Welcome to the Program!");
-        Console.WriteLine("Please enter your name: ");
+    }
+
+    static string PromptUserName()
+    {
+        Console.Write("Please enter your name: ");
         string name = Console.ReadLine();
 
-        Console.Write("Please enter your favorite number: ");
-        string favoriteNumber = Console.ReadLine();
-        
-        favoriteNumber = int.Parse(favoriteNumber);
-        
-        int sq = 1;
+        return name;
+    }
 
-        while (sq < favoriteNumber / sq)
-        {
-            sq++;
-        }
-        if (sq > favoriteNumber / sq)
-            return sq - 1;
-            return sq;
+    static int PromptUserNumber()
+    {
+        Console.Write("Please enter your favorite number: ");
+        int number = int.Parse(Console.ReadLine());
+
+        return number;
     }
-        Console.WriteLine($"Your name is {name}, the square of your favorite number {favoriteNumber} is {square}.");
+
+    static int SquaredNumber(int number)
+    {
+        int square = number * number;
+        return square;
     }
+
+    static void DisplayResult(string name, int square)
+    {
+        Console.WriteLine($"{name}, the square of your favorite number is {square}.");
+    }
+}

@@ -44,6 +44,6 @@ class Program
                 max = number;
             }
         }
-        Console.WriteLine($"The max is: {max}");
+        Console.WriteLine($"The max number in list: {max}");
     }
 }

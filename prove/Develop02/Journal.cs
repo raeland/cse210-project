@@ -1,4 +1,5 @@
 using System;
+using System.Xml.Linq;
 
 namespace Journal
 {
@@ -21,26 +22,27 @@ namespace Journal
         switch(input)
         {
             case 1:
-                Console.   
+                Entry._entry();   
                 break;
             case 2:
-                Console.   
+                Display._display();   
                 break;
             case 3:
-                Console.   
+                Load._load();   
                 break;
             case 4:
-                Console.   
+                Save._save();
                 break;
             case 5:
-                Console.   
+                Quit._quit();   
                 break;
             default 5:
-                Console.WriteLine("Quit");
+                Console.WriteLine("Bye Felicia");
                 return;
                 //break is a requirement in C#
                 //or return; -breaks from the main method. 
                 //the return statement always goes outside whatever method you are in. 
+                // https://www.youtube.com/watch?v=y0HNk96vVLw
         }
         //input = Console.Read();
 }

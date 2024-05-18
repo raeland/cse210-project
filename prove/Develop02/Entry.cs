@@ -4,9 +4,8 @@ namespace Journal
 {
     public class Entry
     {
-    private string _date;
-    private string _entry;
-
+        public string _entry;
+        public string _date;
     public Entry(string date, string entry)
     {
         _date = date;

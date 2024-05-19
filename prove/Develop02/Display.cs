@@ -8,7 +8,7 @@ namespace Journal
     {
     public static void _display()
     {
-        Console.WriteLine($"{_date} {_prompt} {_entry}"); 
+        //Console.WriteLine($"{_date} {_prompt} {_entry}"); 
         Console.ReadLine();
             //return ($"{_date}{_entry}");
         }    

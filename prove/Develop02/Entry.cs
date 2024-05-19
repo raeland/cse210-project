@@ -7,8 +7,8 @@ namespace Journal
     public static void _entry()
     {
         Entry e1 = new Entry();
-        e1._response = " ";
-        
+        //e1._response = " ";
+
     }
     }
 }

@@ -37,15 +37,18 @@ namespace Journal
 
     public class Save
     {
-        public static void _save(List<string> entries, string filename)
+        public static void _save(List<string> entries, string fileName)
         {
+            using (StreamWriter outputFile = new StreamWriter(fileName))
+            {
                 foreach (string entry in entries)
                 {
                     Console.Write(entry);
                 }
+            }
             Console.WriteLine("Journal Saved!");
-          }  
-        }
+        }  
+    }
     }
 }
 

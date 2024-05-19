@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 
 namespace Journal
 {
@@ -17,11 +19,11 @@ class Program
         Console.WriteLine("What would you like to do?");
         Console.WriteLine("Type the number corresponding to your choice:");
         //Console.Read();
-       // Journal journal = new Journal();
+        // Journal journal = new Journal();
         
         int userInput = 0;
         //userInput = Console.ReadLine();
-                //int UserInput = new input();
+        //int UserInput = new input();
         //number = Console.Read();
         switch(userInput)
         {
@@ -49,17 +51,6 @@ class Program
                 //the return statement always goes outside whatever method you are in. 
                 // https://www.youtube.com/watch?v=y0HNk96vVLw
         }
-
     }
 }
-
-    //static void DisplayMessage()
-    //{}
-   // static void UserSelection()
-    //{
-      //  Console.WriteLine("Type the number corresponding to your choice:");
-        //int number = int.Parse(Console.ReadLine());
-
-        //return number;
-    //}
 }

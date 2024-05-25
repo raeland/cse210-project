@@ -4,22 +4,24 @@ using System.IO;
 
 namespace Journal
 {
-    public class PromptGenerator
+    public class Prompt
     {
 
-    public List<string> _prompt;
+        public List<string> _prompt;
+        Random prompt = new();
 
-        public PromptGenerator()
-        {        
-            _prompt = new List<string>(_prompt)
-            //_prompt = new _prompt
+        public string PromptGenerator()
+        {
+            _prompt = new List<string>()
             {
-            "What is one thing you would re-do from today, if you could?",
-            "Describe the most difficult part of your day?",
-            "Where did you see the hand of the Lord in your life today?",
-            "Did you learn something important today?"
+                "What is one thing you would re-do from today, if you could?",
+                "Describe the most difficult part of your day?",
+                "Where did you see the hand of the Lord in your life today?",
+                "Did you learn something important today?"
             };
-            //return PromptGenerator;
+            int indexPrompts = prompt.Next(_prompt.Count);
+
+            return _prompt[indexPrompts];
         }
     }
-} //WHYYYYYYY does it still show an error. I can't figure it out
+}

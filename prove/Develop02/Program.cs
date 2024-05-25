@@ -5,52 +5,63 @@ using System.IO;
 
 namespace Journal
 {
-class Program
-{
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Welcome to Your Journal Program!");
-        Console.WriteLine("Please select ONE of the options below:");
-        Console.WriteLine("1. Write");
-        Console.WriteLine("2. Display");
-        Console.WriteLine("3. Load");
-        Console.WriteLine("4. Save");
-        Console.WriteLine("5. Quit");
-        Console.WriteLine("What would you like to do?");
-        Console.WriteLine("Type the number corresponding to your choice:");
-        //Console.Read();
-        // Journal journal = new Journal();
-        
-        int userInput = 0;
-        //userInput = Console.ReadLine();
-        //int UserInput = new input();
-        //number = Console.Read();
-        switch(userInput)
+        static void Main(string[] args)
+
         {
-            case 1:
-                Entry._entry();
-                break;
-            case 2:
-                Display._display();   
-                break;
-            case 3:
-                Load._load();   
-                break;
-            case 4:
-                Save._save();
-                break;
-            case 5:
-                Quit._quit();
-                break;
-            default:
-                //Quit._quit();
-                Console.WriteLine("Bye Felicia");
-                return;
-                //break is a requirement in C#
-                //or return; -breaks from the main method. 
-                //the return statement always goes outside whatever method you are in. 
-                // https://www.youtube.com/watch?v=y0HNk96vVLw
+            bool program = false;
+
+            Load _loads = new Load();
+            List<List<string>> Journal = new List<List<string>>();
+
+            while (!program)
+            {
+                Console.WriteLine("Welcome to Your Journal Program!");
+                Console.WriteLine("Please select ONE of the options below:");
+                Console.WriteLine("1. Write");
+                Console.WriteLine("2. Display");
+                Console.WriteLine("3. Load");
+                Console.WriteLine("4. Save");
+                Console.WriteLine("5. Quit");
+                Console.WriteLine("What would you like to do?");
+                Console.WriteLine("Type the number corresponding to your choice:");
+
+                string userInput = Console.ReadLine();
+
+                switch (userInput)
+                {
+                    case "1":
+                        Entry entry = new Entry;
+                        List<string> journalEntry = entry._entry();
+                        Journal.Add(journalEntry); // load a file already. this will automatically add this little list<string> and add it to your list<list<string>>
+                        //Prompt prompt = new Prompt();
+                        //Console.WriteLine(prompt.PromptGenerator());
+                        Entry._entry();
+                        break;
+                    case "2":
+                        Display._display(Journal);
+                        break;
+                    case "3":
+                        Journal = _loads._loadFile();
+                        Console.WriteLine("loading File...");
+                        break;
+                    case "4":
+                        Save._save(Journal);
+                        break;
+                    case "5":
+                        program = true;
+                        break;
+                    default:
+                        //Quit._quit();
+                        Console.WriteLine("Bye Felicia");
+                        return;
+                        //break is a requirement in C#
+                        //or return; -breaks from the main method. 
+                        //the return statement always goes outside whatever method you are in. 
+                        // https://www.youtube.com/watch?v=y0HNk96vVLw
+                }
+            }
         }
     }
-}
 }

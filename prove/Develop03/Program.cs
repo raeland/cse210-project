@@ -1,10 +1,64 @@
 using System;
 
-class Program
+namespace MemorizeScriptureGame
+{
+    class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("..Oh, what can I say more...");
+        LibraryScripture _scripture = new LibraryScripture(); //instantiate
+        
+        _scripture.ScriptureLibrary()
+        
+
+        while (true)
+        {
+            Console.Clear();
+            Scripture _scripture = _scripture.ScriptureLibrary();
+
+            if (_scripture != null)
+            {
+                bool memorized = false;
+
+                while (!_scripture.HideAll())
+                {
+                    Console.Clear();
+                    Console.WriteLine(_scripture.RenderScripture());
+
+                    Console.Write("press Enter to hide a word or type 'quit' to exit: ");
+                    string input = Console.ReadLine();
+
+                    if (input() == "quit")
+                    return;
+
+                    _scripture.HideRandom();
+
+                    if (_scripture.HideAll())
+                    {
+                        memorized = true;
+                        break;
+                    }
+                }
+
+                if (memorized)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Okay Scriptorian! Way to Go!!!");
+                    Console.WriteLine("Press Enter to hide more words ");
+                    Console.ReadLine();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Press Enter to exit.");
+                return;
+            }
+        }
+    }
+}
+}
+
+//        Console.WriteLine("..Oh, what can I say more...");
         //store "The Doctrine and Covenants 138:57"
         // "I beheld that the faithful elders of this dispensation, 
         // when they depart from mortal life, continue their labors 
@@ -41,6 +95,3 @@ class Program
 
         // MUST contain 3 classes in addition to Program Class 
             //1.scripture 2.reference (verse range constructor included) 3.represent a word in scripture
-
-    }
-}

@@ -7,7 +7,7 @@ namespace Journal
     public class Load
     {
         public string _entry;
-        public List<List<string>> entries = new List<List<string>>();
+        public List<List<string>> Entries = new List<List<string>>();
         public List<List<string>> _loadFile()
         {
             string fileName;
@@ -22,9 +22,9 @@ namespace Journal
                 {
                     parts[0], parts[1], parts[2]
                 };
-                entries.Add(_parts);
+                Entries.Add(_parts);
             }
-            return entries;
+            return Entries;
         }
     }
 }

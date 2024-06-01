@@ -32,12 +32,9 @@ namespace Journal
                 switch (userInput)
                 {
                     case "1":
-                        Entry entry = new Entry;
-                        List<string> journalEntry = entry._entry();
-                        Journal.Add(journalEntry); // load a file already. this will automatically add this little list<string> and add it to your list<list<string>>
-                        //Prompt prompt = new Prompt();
-                        //Console.WriteLine(prompt.PromptGenerator());
-                        Entry._entry();
+                        // Entry entry = Entry.prompt();
+                        // List<string> journalEntry = new List<string>();
+                        // Journal.Add(journalEntry);
                         break;
                     case "2":
                         Display._display(Journal);

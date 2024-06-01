@@ -2,25 +2,22 @@ using System;
 
 namespace Journal
 {
-    public class Entry
-    {
-    public static void _entry()
-    {
-        Entry e1 = new Entry();
-        //e1._response = " ";
+    class Entry
+{
+  public string _entry { get; set; }
+  public string Response { get; set; }
+  public DateTime Date { get; set; }
 
-        create like main and call the date method 
-        return Date
+  public Entry(string prompt, string response)
+  {
+    _entry = prompt;
+    Response = response;
+    Date = DateTime.Now;
+  }
 
-        call PromptGenerator and return Prompt
-
-        records entry Console.ReadLine and save as variable
-
-        save these three as and list<string> 
-
-        in this make sure you return the list<string>
-
-
-    }
-    }
+  public override string ToString()
+  {
+    return $"Date: {Date}\nPrompt: {_entry}\nResponse: {Response}\n";
+  }
+}
 }

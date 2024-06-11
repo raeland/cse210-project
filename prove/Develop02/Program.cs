@@ -32,9 +32,9 @@ namespace Journal
                 switch (userInput)
                 {
                     case "1":
-                        // Entry entry = Entry.prompt();
-                        // List<string> journalEntry = new List<string>();
-                        // Journal.Add(journalEntry);
+                        Entry entry = new Entry(); //._prompt();
+                        List<string> journalEntry = new List<string>();
+                        Journal.Add(journalEntry);
                         break;
                     case "2":
                         Display._display(Journal);

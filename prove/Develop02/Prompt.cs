@@ -8,7 +8,7 @@ namespace Journal
     {
         public List<string> _prompt;
         public Random _random;
-        //Random prompt = new();
+        Random prompt = new();
 
  public Prompt()
         {

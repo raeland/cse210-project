@@ -2,22 +2,34 @@ using System;
 
 namespace Journal
 {
-    class Entry
+  class Entry
 {
-  public string _entry { get; set; }
-  public string Response { get; set; }
-  public DateTime Date { get; set; }
+  private string _date;
+  private string _prompt;
+  private string _response;
 
-  public Entry(string prompt, string response)
+  public Entry()
   {
-    _entry = prompt;
-    Response = response;
-    Date = DateTime.Now;
+    _date = DateTime.Now.ToShortDateString();
+    _prompt = "Did you learn something important today?";
+    Console.WriteLine(_prompt);
+    _response = Console.ReadLine();
   }
 
-  public override string ToString()
+  public Entry (string date, string prompt, string response)
   {
-    return $"Date: {Date}\nPrompt: {_entry}\nResponse: {Response}\n";
+    _date = date;
+    _prompt = prompt;
+    _response = response;
   }
+  public void Display()
+  {
+    Console.WriteLine($"Date: {_date} - Prompt: {_prompt}\n{_response}");
+  }
+
+//   public void Entry (string line)
+//   {
+//     string[] parts = line.Split(" | ")
+//   }
 }
 }

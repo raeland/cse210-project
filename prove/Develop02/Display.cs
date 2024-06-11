@@ -11,8 +11,8 @@ namespace Journal
         {
             foreach (List<string> entry in Journal)
             {
-                Console.WriteLine($"{entry[0]} {entry[1]}");
-                Console.WriteLine(entry[2]);
+                Console.WriteLine($"{entry[0]} {entry[1]}{entry[2]}");
+                //Console.WriteLine;
             }
         }
     }

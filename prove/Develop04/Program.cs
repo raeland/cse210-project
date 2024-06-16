@@ -1,9 +1,45 @@
 using System;
+using System.Diagnostics;
+using System.Reflection;
 
-class Program
+namespace Mindfullness
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Welcome to Develop04 World!");
+        static void Main(string[] args)
+        {
+            bool program = false;
+
+            while (!program)
+            {
+                Console.WriteLine("Mindfullness to Unlock Peace");
+                Console.WriteLine("Please select ONE of the options below:");
+                Console.WriteLine("1. Breathe Work");
+                Console.WriteLine("2. Make Lists");
+                Console.WriteLine("3. Reflection");
+                Console.WriteLine("4. Quit");
+
+                string userInput = Console.ReadLine();
+                switch (userInput)
+                {
+                    case "1":
+                        Breathing Breathing = new Breathing(5);
+                        Breathing.StartActivity();
+                        break;
+                    case "2":
+                        Listing Listing = new Listing(5);
+                        Listing.StartActivity();
+                        break;
+                    case "3":
+                        Reflecting Reflecting = new Reflecting(5);
+                        Reflecting.StartActivity();
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Bye Felicia!");
+                        return;
+                }
+            }
+        }
     }
 }

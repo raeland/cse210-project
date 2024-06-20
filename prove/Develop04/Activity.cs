@@ -7,7 +7,7 @@ namespace Mindfullness
         protected int _time;
         protected string _activityName;
         protected string _activityDescription;
-        protected abstract void ShowPrompt(int time);
+
 
         public Activity(string activityName, string activityDescription, int time)
         {
@@ -27,7 +27,7 @@ namespace Mindfullness
             }
             EndActivity();
         }
-        
+                protected abstract void ShowPrompt(int time);
         public void EndActivity()
         {
             Console.WriteLine("Well Done! ");

@@ -15,7 +15,7 @@ namespace Mindfullness
             _activityName = activityName;
             _activityDescription = activityDescription;
         }
-        public void StartActivity(string activityName, string activityDescription)
+        public void StartActivity() //string activityName, string activityDescription
         {
             Console.WriteLine($"Begin Your Mindfullness Journey with the {_activityName} Activity");
             Console.WriteLine($"{_activityDescription}");
@@ -27,7 +27,7 @@ namespace Mindfullness
             }
             EndActivity();
         }
-                protected abstract void ShowPrompt(int time);
+        protected abstract void ShowPrompt(int time);
         public void EndActivity()
         {
             Console.WriteLine("Well Done! ");

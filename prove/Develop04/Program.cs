@@ -34,9 +34,12 @@ namespace Mindfullness
                         Reflecting Reflecting = new Reflecting(5);
                         Reflecting.StartActivity();
                         break;
-                    default:
-                        Console.Clear();
+                    case "4":
+                    Console.Clear();
                         Console.WriteLine("Bye Felicia!");
+                        return;
+                    default:
+                        Console.WriteLine("Try again");
                         return;
                 }
             }

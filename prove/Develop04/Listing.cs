@@ -6,6 +6,7 @@ namespace Mindfullness
     {
         private List<string> _listPrompts;
         private List<string> _usersList;
+
         public Listing(int time) : base("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area. ", time)
         {
             _listPrompts = new List<string>
@@ -16,8 +17,25 @@ namespace Mindfullness
             };
             _usersList = new List<string>();
         }
-       public void StartActivity()
-        {}
+       public new void StartActivity()
+        {
+            Console.WriteLine($"Begin Your Mindfulness Journey with the {_activityName} Activity");
+            Console.WriteLine($"{_activityDescription}");
+            Thread.Sleep(3000);
+
+            Random random = new Random();
+            string prompt = _listPrompts[random.Next(_listPrompts.Count)];
+            Console.WriteLine(prompt);
+            Console.WriteLine("You may begin in:");
+            for (int i = 3; i > 0; i--)
+            {
+                Console.WriteLine(i);
+                Thread.Sleep(1000);
+            }
+
+            _usersList = ListItems();
+            EndActivity();
+        }
         protected override void ShowPrompt(int time)
         {
             Console.WriteLine("Think of a time when you were laughing.");
@@ -36,6 +54,7 @@ namespace Mindfullness
                     break;
                 items.Add(input);
             }
+            Console.WriteLine($"You listed {items.Count} items!");
             return items;
         }
     }

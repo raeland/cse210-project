@@ -1,6 +1,6 @@
 using System;
 
-public class Shape
+public abstract class Shape
 {
     // color member variable
     private string Color;
@@ -28,9 +28,9 @@ public class Shape
     // solution doesn't like what i did here:
     // virtual method or function
     // public virtual double GetArea()
-    {
+    //{
         // this method or function should get overrideen in/why(?) derived classes
        // return 0;
-    }
+    //}
     public abstract double GetArea();
 }

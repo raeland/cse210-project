@@ -4,26 +4,26 @@ using System.IO;
 
 namespace MemorizeScriptureGame
 {
-public class BookShelf
-{
-    private List<Scripture> scriptures = new List<Scripture>();
-
-    public void AddScripture(Reference reference, string text)
+    public class BookShelf
     {
-        scriptures.Add(new Scripture(reference, text));
-    }
+        private List<Scripture> scriptures = new List<Scripture>();
 
-    public Scripture SelectRandomScripture()
-    {
-        if (scriptures.Count == 0)
+        public void AddScripture(Reference reference, string text)
         {
-            Console.WriteLine("The scripture shelf is empty.");
-            return null;
+            scriptures.Add(new Scripture(reference, text));
         }
 
-        Random random = new Random();
-        int index = random.Next(scriptures.Count);
-        return scriptures[index];
+        public Scripture SelectRandomScripture()
+        {
+            if (scriptures.Count == 0)
+            {
+                Console.WriteLine("The scripture shelf is empty.");
+                return null;
+            }
+
+            Random random = new Random();
+            int index = random.Next(scriptures.Count);
+            return scriptures[index];
+        }
     }
-}
 }

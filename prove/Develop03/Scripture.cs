@@ -45,7 +45,7 @@ namespace MemorizeScriptureGame
 
         public bool IsCompletelyHidden()
         {
-        //    return currentWordIndex >= _words.Count;
+            //    return currentWordIndex >= _words.Count;
             return _words.All(word => word.IsHidden);
         }
 

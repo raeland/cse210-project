@@ -66,25 +66,25 @@ namespace EternalQuest
                     Console.Write("Enter points: ");
                     int points = int.Parse(Console.ReadLine());
 
-                    switch (choice)
-                    {
-                        case "1":
-                            _goals.Add(new SimpleG(name, points));
-                            break;
-                        case "2":
-                            _goals.Add(new EternalG(name, points));
-                            break;
-                        case "3":
-                            Console.Write("Enter target count: ");
-                            int targetCount = int.Parse(Console.ReadLine());
-                            Console.Write("Enter bonus points: ");
-                            int bonusPoints = int.Parse(Console.ReadLine());
-                            _goals.Add(new CheckListG(name, points, targetCount, bonusPoints));
-                            break;
-                        default:
-                            Console.WriteLine("Invalid - Goal not created.");
-                            break;
-                    }
+                    // switch (choice)
+                    // {
+                    //     case "1":
+                    //         _goals.Add(new SimpleG(name, points));
+                    //         break;
+                    //     case "2":
+                    //         _goals.Add(new EternalG(name, points));
+                    //         break;
+                    //     case "3":
+                    //         Console.Write("Enter target count: ");
+                    //         int targetCount = int.Parse(Console.ReadLine());
+                    //         Console.Write("Enter bonus points: ");
+                    //         int bonusPoints = int.Parse(Console.ReadLine());
+                    //         _goals.Add(new CheckListG(name, points, targetCount, bonusPoints));
+                    //         break;
+                    //     default:
+                    //         Console.WriteLine("Invalid - Goal not created.");
+                    //         break;
+                    // }
                 }
 
                 static void RecordGoalEvent()

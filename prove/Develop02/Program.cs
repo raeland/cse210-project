@@ -10,12 +10,12 @@ namespace Journal
         static void Main(string[] args)
 
         {
-            bool program = false;
+            bool isRunning = true;
 
             Load _loads = new Load();
             List<List<string>> Journal = new List<List<string>>();
 
-            while (!program)
+            while (isRunning)
             {
                 Console.WriteLine("Welcome to Your Journal Program!");
                 Console.WriteLine("Please select ONE of the options below:");
@@ -32,31 +32,28 @@ namespace Journal
                 switch (userInput)
                 {
                     case "1":
-                        // Entry entry = Entry.prompt();
-                        // List<string> journalEntry = new List<string>();
-                        // Journal.Add(journalEntry);
+                        Prompt prompt = new Prompt();
+                        string _prompt = prompt.PromptGenerator();
+                        Console.WriteLine(prompt);
+                        string response = Console.ReadLine();
+                        Console.WriteLine(new Entry(_prompt, response));
                         break;
                     case "2":
                         Display._display(Journal);
                         break;
                     case "3":
-                        Journal = _loads._loadFile();
+                        Load._load();
                         Console.WriteLine("loading File...");
                         break;
                     case "4":
                         Save._save(Journal);
                         break;
                     case "5":
-                        program = true;
+                        isRunning = false;
                         break;
                     default:
-                        //Quit._quit();
                         Console.WriteLine("Bye Felicia");
                         return;
-                        //break is a requirement in C#
-                        //or return; -breaks from the main method. 
-                        //the return statement always goes outside whatever method you are in. 
-                        // https://www.youtube.com/watch?v=y0HNk96vVLw
                 }
             }
         }

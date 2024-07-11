@@ -6,25 +6,39 @@ namespace Journal
 {
     public class Load
     {
-        public string _entry;
-        public List<List<string>> Entries = new List<List<string>>();
-        public List<List<string>> _loadFile()
+        public static void _load()
         {
-            string fileName;
-            Console.Write("Enter file name: ");
-            fileName = Console.ReadLine();
-            string[] lines = System.IO.File.ReadAllLines(fileName);
-
-            foreach (string entry in lines)
+            string fileName = "journals.txt";
+            try
             {
-                string[] parts = entry.Split(" | ");
-                List<string> _parts = new List<string>()
+                if (File.Exists(fileName))
                 {
-                    parts[0], parts[1], parts[2]
-                };
-                Entries.Add(_parts);
+                    string[] lines = File.ReadAllLines(fileName);
+                    foreach (string line in lines)
+                    {
+                        string[] parts = line.Split('|');
+                        if (parts.Length == 3)
+                        {
+                            string date = parts[0].Trim();
+                            string prompt = parts[1].Trim();
+                            string response = parts[2].Trim();
+
+                            Console.WriteLine($"Date: {date}\nPrompt: {prompt}\nResponse: {response}");
+                            Console.WriteLine();
+                        }
+                    }
+                    Console.WriteLine("Journal Entry Loaded Successfully");
+                }
+                else
+                {
+                    Console.WriteLine("Journal Not Found");
+                }
             }
-            return Entries;
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading journal entries: {ex.Message}");
+            }
+            Console.ReadLine();
         }
     }
 }

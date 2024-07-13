@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
-
+// THIS IS MY SECOND ATTEMPT AT THIS ASSIGNMENT
 namespace Mindfullness
 {
     class Program

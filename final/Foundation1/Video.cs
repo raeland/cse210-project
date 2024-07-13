@@ -27,7 +27,7 @@ namespace YouTube
         }
         public void Display()
         {
-            Console.WriteLine($"{_title} {_author} {_length}");   
+            Console.WriteLine($"{_title} {_author} {_length}");
             Console.WriteLine("Comments: ");
         }
     }

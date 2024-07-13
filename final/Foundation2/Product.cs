@@ -1,33 +1,33 @@
 namespace OnlineOrder
 {
     public class Product
-{
-    private string name;
-    private string productId;
-    private double pricePerUnit;
-    private int quantity;
-
-    public Product(string name, string productId, double pricePerUnit, int quantity)
     {
-        this.name = name;
-        this.productId = productId;
-        this.pricePerUnit = pricePerUnit;
-        this.quantity = quantity;
-    }
+        private string _name;
+        private string _productId;
+        private double _pricePerUnit;
+        private int _quantity;
 
-    public double GetTotalCost()
-    {
-        return pricePerUnit * quantity;
-    }
+        public Product(string name, string productId, double pricePerUnit, int quantity)
+        {
+            this._name = name;
+            this._productId = productId;
+            this._pricePerUnit = pricePerUnit;
+            this._quantity = quantity;
+        }
 
-    public string GetName()
-    {
-        return name;
-    }
+        public double GetTotalCost()
+        {
+            return _pricePerUnit * _quantity;
+        }
 
-    public string GetProductId()
-    {
-        return productId;
+        public string GetName()
+        {
+            return _name;
+        }
+
+        public string GetProductId()
+        {
+            return _productId;
+        }
     }
-}
 }

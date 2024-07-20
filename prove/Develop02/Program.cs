@@ -36,7 +36,7 @@ namespace Journal
                         string _prompt = prompt.PromptGenerator();
                         Console.WriteLine(prompt);
                         string response = Console.ReadLine();
-                        Console.WriteLine(new Entry(_prompt, response));
+                        Journal.Add(new Prompt._entry);
                         break;
                     case "2":
                         Display._display(Journal);
